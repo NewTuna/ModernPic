@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+    body
+        script(type='text/javascript').
+          var path = "#{path}";
+          function startMyApp(){
+            document.location='housepiclink://com.housepic.penthouse'+'?item_num='+path;
+            setTimeout(function(){
+              document.location='market://details?id=com.supercell.clashofclans';
+              },1000);
+          }
+          var isAndroid = navigator.userAgent.match('Android');
+            if (isAndroid){
+              startMyApp();
+            }
+            else {
+              alert('안드로이드만 지원합니다.');
+            }
+
+
